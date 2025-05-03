@@ -1,7 +1,10 @@
-package es.econocom.backendPruebaTecnica.login.dto.dto;
+package es.econocom.backendPruebaTecnica.login.dto;
 
+
+import lombok.Getter;
 
 // AuthResponse.java
+@Getter
 public class AuthResponse {
     private String token;
 
@@ -9,7 +12,4 @@ public class AuthResponse {
         this.token = token;
     }
 
-    public String getToken() {
-        return token;
-    }
 }

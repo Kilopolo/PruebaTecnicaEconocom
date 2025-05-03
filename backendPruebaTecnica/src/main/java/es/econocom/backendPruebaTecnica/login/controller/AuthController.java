@@ -1,9 +1,8 @@
 package es.econocom.backendPruebaTecnica.login.controller;
 
 // AuthController.java
-import es.econocom.backendPruebaTecnica.login.dto.dto.AuthResponse;
-import es.econocom.backendPruebaTecnica.login.security.JwtUtil;
-import es.econocom.backendPruebaTecnica.login.dto.dto.LoginRequest;
+import es.econocom.backendPruebaTecnica.login.dto.AuthResponse;
+import es.econocom.backendPruebaTecnica.login.dto.LoginRequest;
 import es.econocom.backendPruebaTecnica.login.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

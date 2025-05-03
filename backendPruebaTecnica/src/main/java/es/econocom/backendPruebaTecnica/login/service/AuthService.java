@@ -1,8 +1,8 @@
 package es.econocom.backendPruebaTecnica.login.service;
 
 
-import es.econocom.backendPruebaTecnica.login.dto.dto.AuthResponse;
-import es.econocom.backendPruebaTecnica.login.dto.dto.LoginRequest;
+import es.econocom.backendPruebaTecnica.login.dto.AuthResponse;
+import es.econocom.backendPruebaTecnica.login.dto.LoginRequest;
 import es.econocom.backendPruebaTecnica.login.security.JwtUtil;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +17,9 @@ public class AuthService {
     }
 
     public AuthResponse authenticate(LoginRequest request) {
+
+        System.out.println("DEBUG - prueba acceso"+ request.getEmail() + " - " + request.getPassword());
+
         if ("admin@example.com".equals(request.getEmail()) && "1234".equals(request.getPassword())) {
             String token = jwtUtil.generateToken(request.getEmail());
             return new AuthResponse(token);
