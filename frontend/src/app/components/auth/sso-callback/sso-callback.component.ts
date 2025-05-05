@@ -1,31 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-sso-callback',
   templateUrl: './sso-callback.component.html',
+  standalone: true,
+  imports: [HttpClientModule], 
 })
 export class SsoCallbackComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
-
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      const code = params['code'];
-      if (code) {
-        fetch('http://localhost:8080/api/auth/sso/callback?code=' + code)
-          .then(response => response.json())
-          .then(data => {
-            alert('Autenticado con éxito vía SSO');
-            // Aquí puedes guardar token, redirigir, etc.
-          })
-          .catch(error => {
-            console.error('Error en callback SSO', error);
-            alert('Error en autenticación SSO');
-          });
-      } else {
-        alert('No se encontró el código de autenticación');
-      }
-    });
+  ngOnInit() {
+    const code = this.route.snapshot.queryParamMap.get('code');
+    if (code) {
+      this.http.post('http://localhost:8080/api/auth/sso/callback', { code })
+        .subscribe({
+          next: (res) => {
+            console.log('Autenticado por SSO:', res);
+          },
+          error: (err) => {
+            console.error('Error al validar SSO:', err);
+          }
+        });
+    } else {
+      console.error('No se recibió código SSO');
+    }
   }
 }
