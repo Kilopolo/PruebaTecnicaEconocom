@@ -54,6 +54,14 @@
       <button mat-raised-button color="accent" class="full-width decathlon-btn">
         ENTRAR CON DECATHLON
       </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="loginSSO()"
+        class="sso-btn full-width"
+      >
+        INICIAR SESIÓN CON SSO
+      </button>
 
       <div class="register-link">
         ¿No tienes cuenta?
@@ -61,14 +69,6 @@
       </div>
     </form>
 
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="loginSSO()"
-      style="background-color: #3f51b5; color: white"
-    >
-      INICIAR SESIÓN CON SSO
-    </button>
     <div class="footer">
       <div class="footerLeft">🌐 IDIOMA: ES</div>
       <div class="footerRight">
