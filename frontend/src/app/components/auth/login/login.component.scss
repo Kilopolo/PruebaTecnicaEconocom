@@ -70,6 +70,29 @@
         font-size: 0.8rem;
         color: #999;
       }
+      .footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        padding: 0.5rem 1rem;
+        // background-color: #f5f5f5; /* puedes ajustar el color */
+        // border-top: 1px solid #ccc;
+        font-size: 0.9rem;
+      }
+      
+      .footerLeft {
+        text-align: left;
+      }
+      
+      .footerRight {
+        text-align: right;
+      }
+      
+      .footerRight .logo {
+        height: 24px; /* ajusta según tamaño deseado */
+      }
+      
     }
   }
   
