@@ -29,7 +29,7 @@ public class AuthController {
     }
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
-        log.debug("DEBUG - prueba acceso{} - {}", request.getEmail(), request.getPassword());
+        log.debug("DEBUG - prueba acceso"+ request.getEmail() + " - " + request.getPassword());
 
         try {
             AuthResponse response = authService.authenticate(request);
