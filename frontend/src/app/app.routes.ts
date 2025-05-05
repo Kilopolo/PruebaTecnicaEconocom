@@ -1,3 +1,7 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { SsoCallbackComponent } from './components/auth/sso-callback/sso-callback.component';
+
+export const routes: Routes = [
+  { path: 'sso/callback', component: SsoCallbackComponent }
+];

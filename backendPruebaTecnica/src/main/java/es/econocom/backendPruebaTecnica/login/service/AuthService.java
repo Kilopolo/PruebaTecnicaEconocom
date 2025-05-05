@@ -27,6 +27,10 @@ public class AuthService {
             throw new RuntimeException("Credenciales inválidas");
         }
     }
+    public AuthResponse generateTokenFromSSO(String email) {
+        String token = jwtUtil.generateToken(email);
+        return new AuthResponse(token);
+    }
 
     public boolean validateToken(String token) {
         return jwtUtil.validateToken(token);

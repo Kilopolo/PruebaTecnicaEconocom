@@ -1,0 +1,75 @@
+.login-wrapper {
+    display: flex;
+    height: 100vh;
+  
+    .left-panel {
+      flex: 1;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      img {
+        max-width: 80%;
+        height: auto;
+      }
+    }
+  
+    .right-panel {
+      flex: 1;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      .logo {
+        width: 150px;
+        margin-bottom: 2rem;
+      }
+  
+      h2 {
+        margin-bottom: 2rem;
+      }
+  
+      .full-width {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+  
+      .orange-btn {
+        background-color: #f26522;
+        color: white;
+      }
+  
+      .decathlon-btn {
+        background-color: #2e49b9;
+        color: white;
+      }
+  
+      .divider {
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        color: #777;
+      }
+  
+      .register-link {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+  
+        a {
+          color: #f26522;
+          text-decoration: none;
+          font-weight: bold;
+          margin-left: 5px;
+        }
+      }
+  
+      .footer {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: #999;
+      }
+    }
+  }
+  
