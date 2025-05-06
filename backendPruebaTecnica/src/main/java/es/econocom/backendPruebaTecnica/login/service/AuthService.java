@@ -22,7 +22,8 @@ public class AuthService {
 
         System.out.println("DEBUG - prueba acceso"+ request.getEmail() + " - " + request.getPassword());
 
-        if ("admin@example.com".equals(request.getEmail()) && "1234".equals(request.getPassword())) {
+        if ("admin@example.com".equals(request.getEmail()) && "1234".equals(request.getPassword())
+            || "a".equals(request.getEmail()) && "a".equals(request.getPassword()) ) {
             String accessToken = jwtUtil.generateToken(request.getEmail());
             String refreshToken = UUID.randomUUID().toString(); // token simulado
             jwtUtil.storeRefreshToken(refreshToken, request.getEmail()); // simulado
