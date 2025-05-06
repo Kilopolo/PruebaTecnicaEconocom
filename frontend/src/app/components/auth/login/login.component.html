@@ -17,6 +17,7 @@
           [(ngModel)]="email"
           required
         />
+        <mat-error *ngIf="emailError">{{ emailError }}</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
@@ -38,6 +39,7 @@
             showPassword ? "visibility_off" : "visibility"
           }}</mat-icon>
         </button>
+        <mat-error *ngIf="passwordError">{{ passwordError }}</mat-error>
       </mat-form-field>
 
       <button
@@ -45,6 +47,7 @@
         color="primary"
         class="full-width orange-btn"
         type="submit"
+        (click)="onSubmit()"
       >
         ENTRAR
       </button>
@@ -67,6 +70,10 @@
         ¿No tienes cuenta?
         <a href="#">Regístrate</a>
       </div>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <mat-error *ngIf="generalError">{{ generalError }}</mat-error>
     </form>
 
     <div class="footer">
