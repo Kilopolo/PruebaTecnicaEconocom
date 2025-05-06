@@ -1,0 +1,22 @@
+<mat-card class="dashboard-card">
+  <mat-card-title>Bienvenido al Dashboard</mat-card-title>
+
+  <mat-card-content>
+    <ng-container *ngIf="token; else noToken">
+      <p><strong>Token JWT:</strong></p>
+      <mat-form-field appearance="fill" class="token-field">
+        <textarea matInput readonly rows="6">{{ token }}</textarea>
+      </mat-form-field>
+    </ng-container>
+
+    <ng-template #noToken>
+      <p>No se encontró un token guardado.</p>
+    </ng-template>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="goHome()">
+      Volver al inicio
+    </button>
+  </mat-card-actions>
+</mat-card>
