@@ -90,6 +90,7 @@
 			<version>1.18.30</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Logger -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -100,16 +101,34 @@
 			<artifactId>slf4j-simple</artifactId> <!-- o logback-classic si usas Logback -->
 			<version>2.0.9</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- Plugin de Spring Boot para empaquetar y ejecutar la aplicación -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<!-- Plugin de Maven para gestionar la codificación de los archivos de recursos -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<!-- Asegura que los recursos se procesen con UTF-8 -->
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
 
 </project>

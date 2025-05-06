@@ -24,8 +24,7 @@ public class AuthService {
     }
 
     /**
-     * Autentica al usuario verificando sus credenciales simuladas.
-     * Si son válidas, genera y retorna un par de tokens (access y refresh).
+     * Autentica al usuario verificando sus credenciales contra la base de datos.
      *
      * @param request Objeto con email y contraseña proporcionados por el usuario.
      * @return {@link AuthResponse} con tokens JWT válidos.
@@ -49,13 +48,6 @@ public class AuthService {
         return new AuthResponse(accessToken, refreshToken);
     }
 
-    /**
-     * Genera un nuevo token de acceso usando un refresh token previamente emitido.
-     *
-     * @param refreshToken Token de actualización válido.
-     * @return Nuevo token de acceso.
-     * @throws RuntimeException si el refresh token no es válido o no está registrado.
-     */
     public String refreshAccessToken(String refreshToken) {
         String email = jwtUtil.getEmailFromRefreshToken(refreshToken);
         if (email != null) {
@@ -64,22 +56,10 @@ public class AuthService {
         throw new RuntimeException("Refresh token inválido");
     }
 
-    /**
-     * Valida un token JWT verificando su firma y expiración.
-     *
-     * @param token Token JWT a validar.
-     * @return {@code true} si es válido; {@code false} en caso contrario.
-     */
     public boolean validateToken(String token) {
         return jwtUtil.validateToken(token);
     }
 
-    /**
-     * Extrae el correo electrónico (subject) contenido en el token JWT.
-     *
-     * @param token Token JWT válido.
-     * @return Correo electrónico extraído del token.
-     */
     public String extractEmail(String token) {
         return jwtUtil.extractEmail(token);
     }
