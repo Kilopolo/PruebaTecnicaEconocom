@@ -7,6 +7,7 @@ import es.econocom.backendPruebaTecnica.login.repository.UsuarioRepository;
 import es.econocom.backendPruebaTecnica.login.security.JwtUtil;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -33,8 +34,10 @@ public class AuthService {
      */
     public AuthResponse authenticate(LoginRequest request) {
         // Buscar usuario en la base de datos por email
-        Usuario usuario = usuarioRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        Optional<Usuario> usuarioOpt = usuarioRepository.findByEmail(request.getEmail());
+        System.out.println("DEBUG - Usuario encontrado? " + usuarioOpt.isPresent());
+
+        Usuario usuario = usuarioOpt.orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         // Verificar que la contraseña sea correcta
         if (!usuario.getPassword().equals(request.getPassword())) {
