@@ -1,124 +1,139 @@
+$primary-color: #f26522;
+$secondary-color: #2596be;
+$background-color: #f9f9f9;
+$font-family: 'Lato', sans-serif;
+
+
 .login-wrapper {
   display: flex;
   height: 100vh;
   // max-width: 100vw;
-  
-  .left-panel {
-    flex: 0 0 60%;
-    background: #f9f9f9;
+
+
+
+  .panel{
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    img {
-      max-width: 80%;
-      height: auto;
+    &-right{
+      flex: 0 0 40%;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      align-self: center;
+  
+      .logo {
+        width: 80%;
+        margin-bottom: 2rem;
+      }
+  
+        h2 {
+          margin-bottom: 2rem;
+          font-size: 2rem;
+        }
+    
+        .full-width {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+    
+        .orange-btn {
+          background-color: $primary-color;
+          color: white;
+          border-radius: 1px; 
+        }
+    
+        .decathlon-btn {
+          background-color: $secondary-color;
+          color: white;
+          border-radius: 1px; 
+        }
+  
+        .sso-btn {
+          padding: 0.5rem 1rem;
+          margin: 0.5rem 0;
+          background-color: $secondary-color;
+          color: white;
+          border-radius: 1px; 
+        }
+  
+    
+        .divider {
+          margin: 1rem 0;
+          font-size: 1rem;
+          text-align: center;
+          font-weight: bold;
+        }
+        
+    
+        .register-link {
+          margin-top: 1rem;
+          font-size: 1rem;
+          text-align: center;
+          font-weight: bold;
+          a {
+            color: $primary-color;
+            font-weight: bold;
+            margin-left: 5px;
+          }
+        }
+    
+        .footer {
+          margin-top: auto;
+          font-size: 0.8rem;
+          color: #999;
+        }
+        .footer {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+        }
+        
+        .footerLeft {
+          text-align: left;
+        }
+        
+        .footerRight {
+          text-align: right;
+        }
+        
+        .footerRight .logo {
+          height: 24px; /* ajusta según tamaño deseado */
+        }
+  
+        
+        .error-message {
+          color: red;
+          font-size: 14px;
+          margin-top: 8px;
+        }
+        
+      }
+
+    &-left{
+      flex: 0 0 60%;
+      background: $background-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        max-width: 80%;
+        height: auto;
+      }
     }
+
   }
 
-  .right-panel {
-    flex: 0 0 40%;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    .logo {
-      // width: 150px;
-      width: 80%;
-      margin-bottom: 2rem;
-    }
+ 
 
-      h2 {
-        margin-bottom: 2rem;
-        font-family: 'Lato', sans-serif;
-        // font-weight: 700; // bold
-        font-size: 2rem;
-      }
-  
-      .full-width {
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-  
-      .orange-btn {
-        background-color: #f26522;
-        color: white;
-        border-radius: 1px; // 👈 Bordes redondeados mínimos
-      }
-  
-      .decathlon-btn {
-        background-color: #2e49b9;
-        color: white;
-        border-radius: 1px; // 👈 Bordes redondeados mínimos
-      }
-
-      .sso-btn {
-        padding: 0.5rem 1rem;
-        margin: 0.5rem 0;
-        background-color: #3f51b5;
-        color: white;
-        border-radius: 1px; // 👈 Bordes redondeados mínimos
-      }
-
-  
-      .divider {
-        margin: 1rem 0;
-        font-size: 1rem;
-        text-align: center;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-      }
-      
-  
-      .register-link {
-        margin-top: 1rem;
-        font-size: 1rem;
-        text-align: center;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-        a {
-          color: #f26522;
-          // text-decoration: none;
-          font-weight: bold;
-          margin-left: 5px;
-        }
-      }
-  
-      .footer {
-        margin-top: auto;
-        font-size: 0.8rem;
-        color: #999;
-      }
-      .footer {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
-      
-      .footerLeft {
-        text-align: left;
-      }
-      
-      .footerRight {
-        text-align: right;
-      }
-      
-      .footerRight .logo {
-        height: 24px; /* ajusta según tamaño deseado */
-      }
-
-      
-      .error-message {
-        color: red;
-        font-size: 14px;
-        margin-top: 8px;
-      }
-      
-    }
      // 👇 Responsive para pantallas chicas
   @media (max-width: 768px) {
     flex-direction: column;
