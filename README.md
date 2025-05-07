@@ -11,8 +11,8 @@ Este proyecto es una prueba técnica full-stack que demuestra la integración en
 
 ```
 technical-challenge/
-├── backend/           # Proyecto Spring Boot (Java 8)
-└── frontend/          # Proyecto Angular (Material UI)
+├── backendPruebaTecnica/           # Proyecto Spring Boot 
+└── frontend/          # Proyecto Angular 
 ```
 
 ---
@@ -29,7 +29,7 @@ technical-challenge/
 
 ### ✅ Frontend (Angular)
 
-* Angular 17
+* Angular 17+
 * Angular Material
 * Formularios con validación reactiva
 * Interfaz de login + flujo SSO
@@ -137,10 +137,10 @@ El backend está configurado para permitir peticiones desde el frontend local (`
 
 Este repositorio contiene ambos proyectos:
 
-* ✅ Código backend Spring Boot (en `backend/`)
+* ✅ Código backend Spring Boot (en `backendPruebaTecnica/`)
 * ✅ Código frontend Angular + Material (en `frontend/`)
 * ✅ Instrucciones claras de ejecución
-* ✅ Assets proporcionados en `assets/`
+* ✅ Assets proporcionados en `frontend/assets/`
 
 ---
 
