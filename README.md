@@ -146,4 +146,6 @@ Este repositorio contiene ambos proyectos:
 
 ## 📫 Contacto
 
-Para dudas o acceso al diseño en Figma, contactar con el responsable de RRHH o técnico.
+Puedes contactarme a través de mi correo electrónico:
+
+**pablo23dr@gmail.com**
